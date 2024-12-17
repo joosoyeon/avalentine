@@ -28,10 +28,15 @@ body, html {
   
   /* 고정된 보라색 도트 스타일 */
   .fixed-dot {
+    position: fixed; /* 화면에서 고정 */
+    top: 20px; /* 화면 상단에서 20px */
+    left: 20px; /* 화면 왼쪽에서 20px */
+    width: 50px; /* 크기 증가 */
+    height: 50px; /* 크기 증가 */
     background-color: #9b59b6; /* 보라색 */
-    top: 50%; /* 화면 중앙 */
-    left: 50%; /* 화면 중앙 */
-    transform: translate(-50%, -50%); /* 정확히 중앙으로 이동 */
+    border-radius: 50%; /* 원형 유지 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    cursor: pointer;
     animation: none; /* 애니메이션 제거 */
   }
   
@@ -62,6 +67,20 @@ body, html {
     cursor: pointer;
   }
   
+  /* 팝업 링크 스타일 */
+  #popup-link {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+  }
+  
+  #popup-link:hover {
+    color: #2980b9;
+  }
+  
   /* 도트 애니메이션 */
   @keyframes float {
     0%, 100% {
@@ -71,3 +90,4 @@ body, html {
       transform: translateY(-10px);
     }
   }
+  

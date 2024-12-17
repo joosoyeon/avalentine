@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>소연양..</title> <!-- 사이트 이름 변경 -->
-  <link rel="stylesheet" href="styles.css"> <!-- CSS 연결 -->
+  <title>소연양..</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="background">
     <!-- 랜덤 도트 리스트 -->
-    <div class="dot" data-content="작업물 1"></div>
-    <div class="dot" data-content="작업물 2"></div>
-    <div class="dot" data-content="작업물 3"></div>
+    <div class="dot" data-content="작업물 1" data-url="https://blog.naver.com/claudevalentine/223675326366"></div>
+    <div class="dot" data-content="작업물 2" data-url="https://blog.naver.com/claudevalentine/223530294136"></div>
+    <div class="dot" data-content="작업물 3" data-url="https://blog.naver.com/claudevalentine/223402039952"></div>
 
-    <!-- 고정된 보라색 도트 (프로필용) -->
+    <!-- 고정된 보라색 도트 (왼쪽 상단 고정) -->
     <div class="dot fixed-dot" data-content="식사하셨나요?"></div>
 
     <!-- 팝업 창 -->
     <div class="popup" id="popup">
       <span class="close-btn" id="close-btn">&times;</span>
       <div class="popup-content" id="popup-content"></div>
+      <a href="#" id="popup-link" target="_blank" style="display: none;">사이트로 이동</a>
     </div>
   </div>
-  <script src="script.js"></script> <!-- JS 연결 -->
+  <script src="script.js"></script>
 </body>
 </html>
