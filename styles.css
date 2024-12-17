@@ -15,7 +15,7 @@ body, html {
     overflow: hidden;
   }
   
-  /* 도트 스타일 */
+  /* 랜덤 도트 스타일 */
   .dot {
     position: absolute;
     width: 20px;
@@ -26,14 +26,13 @@ body, html {
     animation: float 5s infinite ease-in-out;
   }
   
-  /* 도트 애니메이션 */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+  /* 고정된 보라색 도트 스타일 */
+  .fixed-dot {
+    background-color: #9b59b6; /* 보라색 */
+    top: 50%; /* 화면 중앙 */
+    left: 50%; /* 화면 중앙 */
+    transform: translate(-50%, -50%); /* 정확히 중앙으로 이동 */
+    animation: none; /* 애니메이션 제거 */
   }
   
   /* 팝업 스타일 */
@@ -62,5 +61,13 @@ body, html {
     font-size: 20px;
     cursor: pointer;
   }
-
   
+  /* 도트 애니메이션 */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }

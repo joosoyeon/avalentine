@@ -19,13 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
       popup.style.display = "none";
     });
   
-    // 도트를 랜덤 위치에 배치
+    // 랜덤 도트를 화면에 배치
     dots.forEach(dot => {
-      const x = Math.random() * window.innerWidth;
-      const y = Math.random() * window.innerHeight;
-      dot.style.left = `${x}px`;
-      dot.style.top = `${y}px`;
+      if (!dot.classList.contains("fixed-dot")) { // 고정 도트는 제외
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        dot.style.left = `${x}px`;
+        dot.style.top = `${y}px`;
+      }
     });
   });
-
   
