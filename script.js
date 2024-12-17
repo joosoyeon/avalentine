@@ -1,93 +1,37 @@
-/* styles.css */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f8f5e9; /* 이미지와 비슷한 배경색 */
-    font-family: Arial, sans-serif;
-  }
-  
-  .background {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  /* 랜덤 도트 스타일 */
-  .dot {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #6bcf63; /* 초록색 도트 */
-    border-radius: 50%;
-    cursor: pointer;
-    animation: float 5s infinite ease-in-out;
-  }
-  
-  /* 고정된 보라색 도트 스타일 */
-  .fixed-dot {
-    position: fixed; /* 화면에서 고정 */
-    top: 20px; /* 화면 상단에서 20px */
-    left: 20px; /* 화면 왼쪽에서 20px */
-    width: 50px; /* 크기 증가 */
-    height: 50px; /* 크기 증가 */
-    background-color: #9b59b6; /* 보라색 */
-    border-radius: 50%; /* 원형 유지 */
-    z-index: 1000; /* 다른 요소 위에 표시 */
-    cursor: pointer;
-    animation: none; /* 애니메이션 제거 */
-  }
-  
-  /* 팝업 스타일 */
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: none; /* 기본적으로 숨김 */
-    z-index: 1000;
-  }
-  
-  .popup-content {
-    text-align: center;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  /* 팝업 링크 스타일 */
-  #popup-link {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
-  }
-  
-  #popup-link:hover {
-    color: #2980b9;
-  }
-  
-  /* 도트 애니메이션 */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
+// JavaScript 코드 (script.js)
+document.addEventListener("DOMContentLoaded", () => {
+  const dots = document.querySelectorAll(".dot");
+  const popup = document.getElementById("popup");
+  const popupContent = document.getElementById("popup-content");
+  const popupLink = document.getElementById("popup-link");
+  const closeBtn = document.getElementById("close-btn");
+
+  // 도트 클릭 이벤트
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      const content = dot.getAttribute("data-content");
+      const url = dot.getAttribute("data-url");
+
+      popupContent.textContent = content; // 팝업에 콘텐츠 삽입
+      if (url) {
+        popupLink.href = url;
+        popupLink.style.display = "inline-block"; // 링크 버튼 표시
+      } else {
+        popupLink.style.display = "none"; // 링크 버튼 숨김
+      }
+      popup.style.display = "flex"; // 팝업 표시
+    });
+  });
+
+  // 팝업 닫기 버튼
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none"; // 팝업 숨김
+  });
+
+  // 팝업 외부 클릭 시 닫기
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
     }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
+  });
+});
