@@ -1,79 +1,55 @@
-/* styles.css */
+/* 기본 스타일 */
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-  }
-  
-  .background {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-color: #FFF8E7; /* 배경색 지정 */
-  }
-  
-  /* 도트 스타일 */
-  .dot {
-    position: absolute;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .dot:hover {
-    transform: scale(1.2);
-  }
-  
-  /* 큰 보라색 도트 */
-  .large-dot {
-    width: 100px;
-    height: 100px;
-    background-color: #9c27b0; /* 보라색 */
-    top: 20px;
-    left: 20px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-  }
-  
-  /* 초록색 도트 */
-  .small-dot {
-    width: 30px;
-    height: 30px;
-    background-color: #4caf50; /* 초록색 */
-  }
-  
-  /* 팝업 스타일 */
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 1000;
-  }
-  
-  .popup .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .popup-content {
-    margin-top: 20px;
-    font-size: 16px;
-    text-align: center;
-  }
-  
+  margin: 0;
+  overflow: hidden; /* 스크롤바 숨김 */
+  background-color: #FFF8E7; /* 배경색 설정 */
+  font-family: Arial, sans-serif;
+}
+
+#dots-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 보라색 큰 도트 */
+.purple-dot {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #800080; /* 보라색 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 초록색 도트 */
+.dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #00FF00; /* 초록색 */
+  cursor: pointer; /* 클릭 가능한 커서 */
+}
+
+/* 콘텐츠 표시 영역 */
+#content-display {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: none; /* 초기 상태는 숨김 */
+}
