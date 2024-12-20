@@ -1,85 +1,64 @@
-/* CSS 코드 (styles.css) */
+/* styles.css */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-}
-
-.background {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f4f4f4;
-}
-
-/* 도트 스타일 */
-.dot {
-  position: absolute;
-  width: 40px; /* 도트 크기 */
-  height: 40px; /* 도트 크기 */
-  background-color: #4caf50; /* 초록색 도트 */
-  border-radius: 50%;
-  cursor: pointer;
-  animation: float 3s ease-in-out infinite; /* 부드러운 애니메이션 */
-}
-
-/* 고정된 보라색 도트 */
-.fixed-dot {
-  background-color: purple;
-  top: 20px;
-  left: 20px;
-}
-
-/* 팝업 스타일 */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 18px;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-#popup-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-#popup-link:hover {
-  background-color: #0056b3;
-}
-
-/* 도트 애니메이션 */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
   }
-  50% {
-    transform: translateY(-10px);
+  
+  .background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f4f4f4; /* 원하는 배경 색상 */
   }
-}
+  
+  .dot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #4caf50; /* 초록색 */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .dot:hover {
+    transform: scale(1.2);
+  }
+  
+  .fixed-dot {
+    top: 20px;
+    left: 20px;
+    background-color: #9c27b0; /* 보라색 */
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+  }
+  
+  .popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .popup-content {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
