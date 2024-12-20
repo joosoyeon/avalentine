@@ -10,14 +10,12 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: #f4f4f4; /* 원하는 배경 색상 */
+    background-color: #FFF8E7; /* 배경색 지정 */
   }
   
+  /* 도트 스타일 */
   .dot {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: #4caf50; /* 초록색 */
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -27,12 +25,29 @@ body {
     transform: scale(1.2);
   }
   
-  .fixed-dot {
+  /* 큰 보라색 도트 */
+  .large-dot {
+    width: 100px;
+    height: 100px;
+    background-color: #9c27b0; /* 보라색 */
     top: 20px;
     left: 20px;
-    background-color: #9c27b0; /* 보라색 */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
   }
   
+  /* 초록색 도트 */
+  .small-dot {
+    width: 30px;
+    height: 30px;
+    background-color: #4caf50; /* 초록색 */
+  }
+  
+  /* 팝업 스타일 */
   .popup {
     position: fixed;
     top: 50%;
